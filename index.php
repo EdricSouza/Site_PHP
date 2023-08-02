@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/zeus_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <title>Home</title>
+    <title>Blitz</title>
 </head>
 <body>
     <div id="page_content">
         <header>
             <nav>
-                <a href=""><img src="img/zeus_logo.png" alt="" width="90px" height="90px" class="logo"></a>
+                <a href="">
+                <div id="logo">
+                    <img src="img/zeus_logo.png" alt="" width="90px" height="90px" class="logo">
+                    <h1>Blitz</h1>
+                </div>
+                </a>
                 <ul>
                     <a href="#"><li>Home</li></a>
-                    <a href="pagina/game.php"><li>Jogos</li></a>
+                    <a href="pagina/catalog.php"><li>Jogos</li></a>
                     <a href=""><li>Sobre</li></a>
                     <a href=""><li>Suporte</li></a>
                     <li id="row"><a href=""></a></li>
@@ -64,7 +69,7 @@
                 </article>
             </section>
 
-            <div id="more--link"><a href="pagina/game.php" id="btn_link">Mais Jogos 🠖</a></div>
+            <div id="more--link"><a href="pagina/catalog.php" id="btn_link">Mais Jogos 🠖</a></div>
             <br><br><b></b><br><br><b></b>
             <br><br><b></b><br><br><b></b>
             <br><br><b></b><br><br><b></b>

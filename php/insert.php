@@ -9,4 +9,6 @@ $descr = $_GET['descr'];
 
 $result = mysqli_query($conn, "INSERT INTO cards (name, img, price, description) values ('$name', '$img_name', '$preco', '$descr')");
 
+header('location: ../pagina/inserir.php');
+
 ?>

@@ -23,9 +23,11 @@ include('../php/conexao.php')
             <input type="text" name="preco" id=""> <br>
             </label> <br><br>
             <label for="descr"> Descrição <br>
-        <textarea name="descr" id="" cols="30" rows="10"></textarea>
+            <textarea name="descr" id="" cols="30" rows="10"></textarea>
+            <label for="position">Posição</label>
+            <input type="checkbox" name="" id="">
 
-        <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar">
     </form>
 </body>
 </html>
