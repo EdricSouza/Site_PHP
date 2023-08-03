@@ -15,12 +15,11 @@
                 <a href="">
                 <div id="logo">
                     <img src="../img/zeus_logo.png" alt="" width="90px" height="90px" class="logo">
-                    <h1>Blitz</h1>
                 </div>
                 </a>
                 <ul>
                     <a href="../index.php"><li>Home</li></a>
-                    <a href="catalog/game.php"><li>Jogos</li></a>
+                    <a href="#"><li>Jogos</li></a>
                     <a href=""><li>Sobre</li></a>
                     <a href=""><li>Suporte</li></a>
                     <li id="row"><a href=""></a></li>
@@ -54,7 +53,6 @@
                                 <h3>R$ <?php echo $row['price']; ?></h3>
                                 </a>
                             </div>
-                
                 <?php } ?>
 
             </div>

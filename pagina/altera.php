@@ -17,16 +17,32 @@ $result = mysqli_query($conn, "SELECT * FROM cards WHERE id='$id'");
     <title>Altera</title>
 </head>
 <body>
-<form name="form" action="../php/update.php" method="post"> 
+<form name="form" action="../php/update.php" method="GET"> 
 
 <?php while($row = mysqli_fetch_array($result)){ ?>
-    <input type="text" name="nome" value=" <?= $row["name"]; ?>" /><br />
-    <input type="text" name="img" value="<?= $row["img"]; ?>" /><br />
-    <input type="text" name="preco" value=" <?= $row["price"]; ?>" /><br />
-    <input type="text" name="descr" value="<?= $row["description"]; ?>" /><br />
-
-    <input type="submit" value="SALVAR" > <br />
-    <input type="submit" value="VOLTAR" onClick="location.href=lista_cliente.php" >  <br />
+    <label for="nome"> Nome <br>
+            <input type="hidden" name="id" value="<?=$row['id']?>">
+                <input type="text" name="nome" id="" value="<?=$row['name']?>"> <br>
+            </label> <br><br>
+            <label for="img"> Link da imagem <br>
+                <input type="text" name="img" id="" value="<?=$row['img']?>"> <br>
+            </label> <br><br>
+            <label for="preco"> Preço <br>
+                <input type="text" name="preco" id="" value="<?=$row['price']?>"> <br>
+            </label> <br><br>
+            <label for="descr"> Descrição <br>
+                <textarea name="descr" id="" cols="30" rows="10"><?=$row['description']?></textarea> <br>
+            </label>
+            <label for="position">Posição
+                <select name="position" id="" selected="<?=$row['position']?>">
+                    <option value="normal">Comum</option>
+                    <option value="promocional">Promocional</option>
+                    <option value="destaque">Destaque</option>
+                </select>
+            </label>
+            <br>
+            <input type="submit" value="Enviar">
+            <input type="submit" value="VOLTAR" onClick="location.href=lista_cliente.php" >  <br />
 
 
 <?php } ?>

@@ -1,9 +1,15 @@
+<?php
+    include('php/conexao.php');
+    $result = mysqli_query($conn, "SELECT * FROM cards WHERE position = 'promocional'");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/zeus_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Blitz</title>
 </head>
@@ -12,9 +18,8 @@
         <header>
             <nav>
                 <a href="">
-                <div id="logo">
+                <div class="logo">
                     <img src="img/zeus_logo.png" alt="" width="90px" height="90px" class="logo">
-                    <h1>Blitz</h1>
                 </div>
                 </a>
                 <ul>
@@ -56,17 +61,24 @@
             <h2><div class="title">Promoções</div></h2>
 
             <section>
-                <article .class="container">
-                    <?php /* while($row = mysqli_fetch_array($games)){ ?>
-                    <a href="jogo.php?id="<?= $row["id"];?>>
-                        <img src="img/<?php $row["nome"]?>.jpg" alt="">
-                            <p class="preco"><?php $row["preco"]?></p>
-                        </img>
-                    </a>
-                    <?php
-                    }*/
-                    ?>
-                </article>
+                <div id="wrapper">
+                
+                    <?php $reversedResult = array_reverse(mysqli_fetch_all($result, MYSQLI_ASSOC));
+                    foreach ($reversedResult as $row) {?>
+                        
+                            <div class="cards">
+                            <a href="pag_game.php?id= <?= $row["name"]; ?>" class="link">
+                                <h3><?php echo $row['name']; ?></h3>
+                                    <div class="img">
+                                        <img src="<?php echo $row['img']; ?>" alt="jogo_<?php echo $row['name']; ?>" width="190px" height="267px">
+                                    </div>
+                                <h3>R$ <?php echo $row['price']; ?></h3>
+                                </a>
+                            </div>
+                
+                    <?php } ?>
+
+                </div>
             </section>
 
             <div id="more--link"><a href="pagina/catalog.php" id="btn_link">Mais Jogos 🠖</a></div>

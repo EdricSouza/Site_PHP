@@ -20,6 +20,7 @@ $result = mysqli_query($conn, "SELECT * FROM cards");
     <th scope="col">&nbsp; Link da Imagem</th>
     <th scope="col">&nbsp; Preço</th>
     <th scope="col">&nbsp; Descrição</th>
+    <th scope="col">&nbsp; Posição</th>
   </tr>
   <?php while($row=mysqli_fetch_array($result)){ ?>
   <tr>
@@ -28,9 +29,10 @@ $result = mysqli_query($conn, "SELECT * FROM cards");
     <td>&nbsp; <?= $row["img"]; ?></td>
     <td>&nbsp; <?= $row["price"]; ?></td>
     <td>&nbsp; <?= $row["description"]; ?></td>
+    <td>&nbsp; <?= $row["position"]; ?></td>
     <td>&nbsp; 
     	<a href="altera.php?id= <?= $row["id"]; ?>"> <div >Alterar </div> </a>
-        <a href="delete.php?id= <?= $row["id"]; ?>"> <div > Deletar </div> </a>        
+        <a href="deletar.php?id= <?= $row["id"]; ?>"> <div > Deletar </div> </a>        
     </td>
   </tr>
   <?php } ?>
